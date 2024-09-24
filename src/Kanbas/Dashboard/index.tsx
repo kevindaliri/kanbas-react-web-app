@@ -8,7 +8,7 @@ export default function Dashboard() {
             <div id="wd-dashboard-courses">
                 <div className="wd-dashboard-course" style={{ marginBottom: '20px' }}>
                     <Link className="wd-dashboard-course-link" to="/Kanbas/Courses/1234/Home">
-                        <img src="/Figma.png" width={200} height={200} />
+                        <img src="/Figma.png" alt="image" width={200} height={200} />
                         <div>
                             <h5>CS3305 Advanced Figma</h5>
                             <p className="wd-dashboard-course-title">Full Stack Software Developer</p>
@@ -19,7 +19,7 @@ export default function Dashboard() {
 
                 <div className="wd-dashboard-course" style={{ marginBottom: '20px' }}>
                     <Link className="wd-dashboard-course-link" to="/Kanbas/Courses/1235/Home">
-                        <img src="/Java-Logo.jpg" width={200} height={200} />
+                        <img src="/Java-Logo.jpg" alt="image" width={200} height={200} />
                         <div>
                             <h5>CS3320 React JS</h5>
                             <p className="wd-dashboard-course-title">Front-End Development</p>
@@ -30,7 +30,7 @@ export default function Dashboard() {
 
                 <div className="wd-dashboard-course" style={{ marginBottom: '20px' }}>
                     <Link className="wd-dashboard-course-link" to="/Kanbas/Courses/1236/Home">
-                        <img src="/HTML.png" width={200} height={200} />
+                        <img src="/HTML.png" alt="image" width={200} height={200} />
                         <div>
                             <h5>CS3307 Node.js Basics</h5>
                             <p className="wd-dashboard-course-title">Back-End Development</p>
@@ -41,7 +41,7 @@ export default function Dashboard() {
 
                 <div className="wd-dashboard-course" style={{ marginBottom: '20px' }}>
                     <Link className="wd-dashboard-course-link" to="/Kanbas/Courses/1237/Home">
-                        <img src="/Bloomberg.jpg" width={200} />
+                        <img src="/Bloomberg.jpg" alt="image" width={200} />
                         <div>
                             <h5>CS3310 Python for Data Science</h5>
                             <p className="wd-dashboard-course-title">Data Science Fundamentals</p>
@@ -52,7 +52,7 @@ export default function Dashboard() {
 
                 <div className="wd-dashboard-course" style={{ marginBottom: '20px' }}>
                     <Link className="wd-dashboard-course-link" to="/Kanbas/Courses/1238/Home">
-                        <img src="/Angular.png" width={200} />
+                        <img src="/Angular.png" alt="image" width={200} />
                         <div>
                             <h5>CS3308 Angular Essentials</h5>
                             <p className="wd-dashboard-course-title">Web Application Development</p>
@@ -63,7 +63,7 @@ export default function Dashboard() {
 
                 <div className="wd-dashboard-course" style={{ marginBottom: '20px' }}>
                     <Link className="wd-dashboard-course-link" to="/Kanbas/Courses/1239/Home">
-                        <img src="/SQL.png" width={200} />
+                        <img src="/SQL.png" alt="image" width={200} />
                         <div>
                             <h5>CS3312 SQL & Database Design</h5>
                             <p className="wd-dashboard-course-title">Database Management</p>
@@ -74,7 +74,7 @@ export default function Dashboard() {
 
                 <div className="wd-dashboard-course" style={{ marginBottom: '20px' }}>
                     <Link className="wd-dashboard-course-link" to="/Kanbas/Courses/1240/Home">
-                        <img src="/AWS.png" width={200} />
+                        <img src="/AWS.png" alt="image" width={200} />
                         <div>
                             <h5>CS3315 AWS Cloud Computing</h5>
                             <p className="wd-dashboard-course-title">Cloud Solutions Architect</p>
