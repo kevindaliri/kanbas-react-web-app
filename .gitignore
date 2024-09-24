@@ -21,3 +21,23 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# IDEs and editors
+.idea/               
+.vscode/             
+*.sublime-workspace  
+*.sublime-project    
+
+# Mac system files
+.DS_Store
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Other configurations
+config.json
+
+# React specific
+.eslintcache

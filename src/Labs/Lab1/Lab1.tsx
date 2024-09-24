@@ -43,7 +43,14 @@ export default function Lab1() {
                 </ol>
                 My favorite recipe:
                 <ol id="wd-your-favorite-recipe">
-                    {/* complete on your own */}
+                    <li>Gather ingredients for chocolate chip cookies.</li>
+                    <li>Cream butter and sugar together.</li>
+                    <li>Add eggs and vanilla extract.</li>
+                    <li>Mix in dry ingredients (flour, baking soda, salt).</li>
+                    <li>Fold in chocolate chips.</li>
+                    <li>Drop dough onto baking sheet.</li>
+                    <li>Bake at 350°F for 10-12 minutes.</li>
+                    <li>Let cool and enjoy!</li>
                 </ol>
                 <h5>Unordered List Tag</h5>
                 My favorite books (in no particular order)
@@ -56,48 +63,52 @@ export default function Lab1() {
                 </ul>
                 Your favorite books (in no particular order)
                 <ul id="wd-your-books">
-                    {/* complete on your own */}
+                    <li>The Hobbit</li>
+                    <li>1984</li>
+                    <li>Brave New World</li>
+                    <li>Fahrenheit 451</li>
+                    <li>The Catcher in the Rye</li>
                 </ul>
             </div>
             <div id="wd-tables">
-        <h4>Table Tag</h4>
-        <table border={1} width="100%">
-          <thead>
-            <tr>
-              <th>Quiz</th>
-              <th>Topic</th>
-              <th>Date</th>
-              <th>Grade</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Q1</td>
-              <td>HTML</td>
-              <td>2/3/21</td>
-              <td>85</td>
-            </tr>
-            <tr>
-              <td>Q2</td>
-              <td>CSS</td>
-              <td>2/10/21</td>
-              <td>90</td>
-            </tr>
-            <tr>
-              <td>Q3</td>
-              <td>JavaScript</td>
-              <td>2/17/21</td>
-              <td>95</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colSpan={3}>Average</td>
-              <td>90</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
+                <h4>Table Tag</h4>
+                <table border={1} width="100%">
+                    <thead>
+                        <tr>
+                            <th>Quiz</th>
+                            <th>Topic</th>
+                            <th>Date</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Q1</td>
+                            <td>HTML</td>
+                            <td>2/3/21</td>
+                            <td>85</td>
+                        </tr>
+                        <tr>
+                            <td>Q2</td>
+                            <td>CSS</td>
+                            <td>2/10/21</td>
+                            <td>90</td>
+                        </tr>
+                        <tr>
+                            <td>Q3</td>
+                            <td>JavaScript</td>
+                            <td>2/17/21</td>
+                            <td>95</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colSpan={3}>Average</td>
+                            <td>90</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     );
 }
