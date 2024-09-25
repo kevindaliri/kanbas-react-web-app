@@ -140,7 +140,7 @@ export default function Lab1() {
                 <br />
                 Loading a local image:
                 <br />
-                <img id="wd-teslabot" src="images/teslabot.jpg" alt="" height="200px" />
+                <img id="wd-teslabot" src="teslabot.jpg" alt="" height="200px" />
             </div>
 
             <div id="wd-forms">
@@ -172,7 +172,6 @@ export default function Lab1() {
                         value="Wonderland"
                         title="The last name"
                     />
-                    {/* copy rest of form elements here  */}
                     <h5>Text boxes</h5>
                     <label>Biography:</label>
                     <br />
