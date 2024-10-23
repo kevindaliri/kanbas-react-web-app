@@ -1,29 +1,32 @@
 import { Link } from "react-router-dom";
+import * as db from "../Database";
 
 export default function Dashboard() {
+    const courses = db.courses;
+
     return (
         <div id="wd-dashboard">
             <h1 id="wd-dashboard-title">Dashboard</h1> 
             <hr />
-            <h2 id="wd-dashboard-published">Published Courses (12)</h2> 
+            <h2 id="wd-dashboard-published">Published Courses ({courses.length})</h2> 
             <hr />
 
             {/* Course Grid */}
             <div id="wd-dashboard-courses" className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-                
-                {/* First Course */}
-                <div className="wd-dashboard-course col" style={{ marginBottom: '35px', width: "260px", minHeight: "400px" }}>
-                    <div className="card rounded-3 overflow-hidden" style={{ height: '400px' }}>
-                        <Link className="wd-dashboard-course-link text-decoration-none text-dark" to="/Kanbas/Courses/1234/Home">
-                            <img src="/Figma.png" alt="Figma logo" className="card-img-top" style={{ height: '160px', objectFit: 'cover' }} />
-                            <div className="card-body" style={{ height: "200px" }}>
-                                <h5 className="card-title">CS3305 Advanced Figma</h5>
-                                <p className="card-text">Full Stack Software Developer</p>
-                                <button className="btn btn-primary"> Go </button>
-                            </div>
-                        </Link>
+                {courses.map((course) => (
+                    <div className="wd-dashboard-course col" style={{ marginBottom: '35px', width: "260px", minHeight: "400px" }} key={course._id}>
+                        <div className="card rounded-3 overflow-hidden" style={{ height: '400px' }}>
+                            <Link className="wd-dashboard-course-link text-decoration-none text-dark" to={`/Kanbas/Courses/${course._id}/Home`}>
+                                <img src="/Figma.png" alt="Figma logo" className="card-img-top" style={{ height: '160px', objectFit: 'cover' }} />
+                                <div className="card-body" style={{ height: "200px" }}>
+                                    <h5 className="card-title">{course.name}</h5>
+                                    <p className="card-text overflow-y-hidden" style={{ maxHeight: 100 }}>{course.description}</p>
+                                    <button className="btn btn-primary">Go</button>
+                                </div>
+                            </Link>
+                        </div>
                     </div>
-                </div>
+                ))}
 
                 {/* Second Course */}
                 <div className="wd-dashboard-course col" style={{ marginBottom: '35px', width: "260px", minHeight: "400px" }}>
@@ -33,7 +36,7 @@ export default function Dashboard() {
                             <div className="card-body" style={{ height: "200px" }}>
                                 <h5 className="card-title">CS3320 React JS</h5>
                                 <p className="card-text">Front-End Development</p>
-                                <button className="btn btn-primary"> Go </button>
+                                <button className="btn btn-primary">Go</button>
                             </div>
                         </Link>
                     </div>
@@ -47,7 +50,7 @@ export default function Dashboard() {
                             <div className="card-body" style={{ height: "200px" }}>
                                 <h5 className="card-title">CS3307 Node.js Basics</h5>
                                 <p className="card-text">Back-End Development</p>
-                                <button className="btn btn-primary"> Go </button>
+                                <button className="btn btn-primary">Go</button>
                             </div>
                         </Link>
                     </div>
@@ -61,7 +64,7 @@ export default function Dashboard() {
                             <div className="card-body" style={{ height: "200px" }}>
                                 <h5 className="card-title">CS3310 Python for Data Science</h5>
                                 <p className="card-text">Data Science Fundamentals</p>
-                                <button className="btn btn-primary"> Go </button>
+                                <button className="btn btn-primary">Go</button>
                             </div>
                         </Link>
                     </div>
@@ -75,7 +78,7 @@ export default function Dashboard() {
                             <div className="card-body" style={{ height: "200px" }}>
                                 <h5 className="card-title">CS3308 Angular Essentials</h5>
                                 <p className="card-text">Web Application Development</p>
-                                <button className="btn btn-primary"> Go </button>
+                                <button className="btn btn-primary">Go</button>
                             </div>
                         </Link>
                     </div>
@@ -89,7 +92,7 @@ export default function Dashboard() {
                             <div className="card-body" style={{ height: "200px" }}>
                                 <h5 className="card-title">CS3312 SQL & Database Design</h5>
                                 <p className="card-text">Database Management</p>
-                                <button className="btn btn-primary"> Go </button>
+                                <button className="btn btn-primary">Go</button>
                             </div>
                         </Link>
                     </div>
@@ -103,12 +106,11 @@ export default function Dashboard() {
                             <div className="card-body" style={{ height: "200px" }}>
                                 <h5 className="card-title">CS3315 AWS Cloud Computing</h5>
                                 <p className="card-text">Cloud Solutions Architect</p>
-                                <button className="btn btn-primary"> Go </button>
+                                <button className="btn btn-primary">Go</button>
                             </div>
                         </Link>
                     </div>
                 </div>
-
             </div>
         </div>
     );
