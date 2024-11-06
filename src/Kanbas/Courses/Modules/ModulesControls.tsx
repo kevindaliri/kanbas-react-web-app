@@ -1,7 +1,10 @@
-import { FaPlus, FaCircle } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa6";
 import GreenCheckmark from "./GreenCheckmark";
+import ModuleEditor from "./ModuleEditor";
 
-export default function ModulesControls() {
+export default function ModulesControls({ moduleName, setModuleName, addModule }:
+  { moduleName: string; setModuleName: (title: string) => void; addModule: () => void; }) {
+  
   return (
     <div id="wd-modules-controls" className="text-nowrap mb-4">
       <button id="wd-collapse-all" className="btn btn-lg btn-secondary me-2">
@@ -44,10 +47,20 @@ export default function ModulesControls() {
         </ul>
       </div>
 
-      <button id="wd-add-module-btn" className="btn btn-lg btn-danger">
+      {/* Add data attributes to trigger modal */}
+      <button id="wd-add-module-btn" className="btn btn-lg btn-danger"
+        data-bs-toggle="modal" data-bs-target="#wd-add-module-dialog">
         <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
         Module
       </button>
+
+      {/* ModuleEditor component as a modal */}
+      <ModuleEditor 
+        dialogTitle="Add Module" 
+        moduleName={moduleName} 
+        setModuleName={setModuleName} 
+        addModule={addModule} 
+      />
     </div>
   );
 }
