@@ -8,8 +8,8 @@ const Assignments = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Fetch assignments from Redux store with correct path
-  const assignments = useSelector((state: any) => state.assignmentsReducer?.assignments || []);
+  // Fetch assignments from Redux store
+  const assignments = useSelector((state: any) => state.assignmentReducer?.assignments || []);
 
   // Filter assignments by course ID
   const courseAssignments = assignments.filter((assignment: any) => assignment.course === cid);

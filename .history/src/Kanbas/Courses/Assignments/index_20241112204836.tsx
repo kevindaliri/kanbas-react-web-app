@@ -1,15 +1,15 @@
 import { useParams, useNavigate } from "react-router";
 import { BsGripVertical } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteAssignment } from "./reducer";
+import { deleteAssignment } from "./reducer";import "./index.css";
 
 const Assignments = () => {
   const { cid } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Fetch assignments from Redux store with correct path
-  const assignments = useSelector((state: any) => state.assignmentsReducer?.assignments || []);
+  // Fetch assignments from Redux store
+  const assignments = useSelector((state: any) => state.assignmentReducer?.assignments || []);
 
   // Filter assignments by course ID
   const courseAssignments = assignments.filter((assignment: any) => assignment.course === cid);

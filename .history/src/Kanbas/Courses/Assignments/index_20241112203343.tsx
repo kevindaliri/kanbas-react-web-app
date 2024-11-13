@@ -8,21 +8,17 @@ const Assignments = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Fetch assignments from Redux store with correct path
   const assignments = useSelector((state: any) => state.assignmentsReducer?.assignments || []);
 
-  // Filter assignments by course ID
   const courseAssignments = assignments.filter((assignment: any) => assignment.course === cid);
 
   return (
     <div id="wd-assignments">
-      {/* Assignments Header */}
       <div className="d-flex justify-content-between align-items-center bg-secondary p-3 mb-4">
         <div className="d-flex align-items-center">
           <BsGripVertical className="me-2 fs-4" />
           <h4 className="m-0">Assignments</h4>
         </div>
-        {/* Button to add new assignment */}
         <button
           className="btn btn-danger"
           onClick={() => navigate(`/Kanbas/Courses/${cid}/Assignments/New`)}
@@ -31,7 +27,6 @@ const Assignments = () => {
         </button>
       </div>
 
-      {/* Assignment List */}
       <ul className="list-group">
         {courseAssignments.map((assignment: any) => (
           <li
@@ -39,7 +34,6 @@ const Assignments = () => {
             className="list-group-item d-flex justify-content-between align-items-center mb-3"
           >
             <div>
-              {/* Link to the assignment editor */}
               <a
                 href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
                 className="text-decoration-none fw-bold"
@@ -53,7 +47,6 @@ const Assignments = () => {
               </p>
             </div>
 
-            {/* Delete Button */}
             <button
               className="btn btn-outline-danger"
               onClick={() => dispatch(deleteAssignment(assignment._id))}

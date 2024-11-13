@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { enrollmentStatus } from "../enrollmentReducer";
+import { enrollmentStatus } from "./enrollmentReducer";
 
 const Dashboard = ({ courses, course, setCourse, addNewCourse, deleteCourse, updateCourse }: {
   courses: any[];
