@@ -1,36 +1,25 @@
-import { useEffect, useState } from "react";
-import { Navigate, Route, Routes, useParams, useLocation } from "react-router";
-import { FaAlignJustify } from "react-icons/fa";
+import React from 'react';
+import { Navigate, Route, Routes, useParams, useLocation } from "react-router-dom";
+
 import CoursesNavigation from "./Navigation";
-import Modules from "./Modules";
 import Home from "./Home";
-import Assignments from "./Assignments";
-import AssignmentEditor from "./Assignments/Editor";
-import PeopleTable from "./People/Table";
-import { courses } from "../Database";
+import Modules from "./Modules";
+import Assignments from "./Assignments/Editor";
+import AssignmentEditor from './Assignments/CreateAssignment';
+import PeopleTable from './People/Table';
+import { FaAlignJustify } from 'react-icons/fa';
 
-export default function Courses() {
-  const { cid } = useParams();
+
+export default function Courses({ courses }: { courses: any[]; }) {
+  const { cid: courseId } = useParams<{ cid: string }>();
+  const course = courses.find((course) => course._id === courseId);
   const { pathname } = useLocation();
-
-  const [breadcrumb, setBreadcrumb] = useState("");
-  const course = courses.find((course) => course._id === cid);
-
-  useEffect(() => {
-    const pathParts = pathname.split("/");
-    const section = pathParts[4] || "Home";
-    if (course) {
-      setBreadcrumb(`${course.name} > ${section}`);
-    } else {
-      setBreadcrumb(section);
-    }
-  }, [pathname, course]);
-
+  
   return (
     <div id="wd-courses">
       <h2 className="text-danger">
         <FaAlignJustify className="me-3 fs-4 mb-1" />
-        {breadcrumb}
+        {course && course.number} {course && course.name} &gt; {pathname.split("/")[4]}
       </h2>
       <hr />
 
@@ -40,11 +29,16 @@ export default function Courses() {
         </div>
         <div className="flex-fill">
           <Routes>
+            <Route path="/" element={<Navigate to="Home" />} />
             <Route path="Home" element={<Home />} />
             <Route path="Modules" element={<Modules />} />
-            <Route path="Assignments" element={<Assignments />} />
-            <Route path="Assignments/:aid" element={<AssignmentEditor />} />
+            <Route path="Assignments">
+              <Route index element={<Assignments />} />
+              <Route path="new" element={<AssignmentEditor />} />
+              <Route path=":aid" element={<AssignmentEditor />} />
+            </Route>
             <Route path="People" element={<PeopleTable />} />
+            <Route path="Grades" element={<h1>Grades</h1>} />
           </Routes>
         </div>
       </div>

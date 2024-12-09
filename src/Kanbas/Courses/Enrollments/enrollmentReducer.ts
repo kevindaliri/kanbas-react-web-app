@@ -1,5 +1,5 @@
-import { courses } from "./Database";
-import { enrollments } from "./Database/";
+import { courses } from "../../Database";
+import { enrollments } from "../../Database";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
